@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dcts6tir4wmp6"
+path="res://.godot/imported/1-02.-Awake-_Opening_.ogg-62a19fc0d4e476bfea74c74f6887607d.oggvorbisstr"
+
+[deps]
+
+source_file="res://CS Music/1-02.-Awake-_Opening_.ogg"
+dest_files=["res://.godot/imported/1-02.-Awake-_Opening_.ogg-62a19fc0d4e476bfea74c74f6887607d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

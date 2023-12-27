@@ -5,11 +5,14 @@ var player
 var chase = false
 var SPEED = 200
 
+func _ready():
+	get_node("AnimatedSprite2D").play("Idle")
 func _physics_process(delta):
 	#Gravity for Frog
 	velocity.y += gravity * delta
 	if chase == true:
-		get_node("AnimatedSprite2D").play("Jump")
+		if get_node("AnimatedSprite2D").animation != "Death":
+			get_node("AnimatedSprite2D").play("Jump")
 		player = get_node("../../Player/Player")
 		var direction = (player.position - self.position).normalized()
 		if direction.x > 0:
@@ -18,8 +21,9 @@ func _physics_process(delta):
 			get_node("AnimatedSprite2D").flip_h = false
 		velocity.x = direction.x * SPEED
 	else:
+		if get_node("AnimatedSprite2D").animation != "Death":
+			get_node("AnimatedSprite2D").play("Idle")
 		velocity.x = 0
-		get_node("AnimatedSprite2D").play("Idle")
 	move_and_slide()
 	
 
@@ -35,4 +39,20 @@ func _on_player_detection_body_exited(body):
 
 func _on_player_death_body_entered(body):
 	if body.name == "Player":
-		self.queue_free()
+		death()
+
+
+func _on_player_collision_body_entered(body):
+	if body.name == "Player":
+		Game.playerHP -= 3 
+		death()
+
+func death():
+	Game.Score += 5
+	Utils.saveGame()
+	chase = false
+	get_node("AnimatedSprite2D").play("Death")
+	$CollisionShape2D.disabled = true
+	await get_node("AnimatedSprite2D").animation_finished
+	self.queue_free()
+	

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bc453bvd4644x"
+path="res://.godot/imported/Heal.mp3-4b6f6dcbe5803a3bffb14b4eea7e6825.mp3str"
+
+[deps]
+
+source_file="res://CS Music/Heal.mp3"
+dest_files=["res://.godot/imported/Heal.mp3-4b6f6dcbe5803a3bffb14b4eea7e6825.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

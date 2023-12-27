@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvwy8hslsfqg0"]
+[gd_scene load_steps=4 format=3 uid="uid://bvwy8hslsfqg0"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_5khhw"]
 [ext_resource type="PackedScene" uid="uid://c0h2ewq2nvlof" path="res://parallax_background.tscn" id="2_4ixwd"]
+[ext_resource type="AudioStream" uid="uid://dcts6tir4wmp6" path="res://CS Music/1-02.-Awake-_Opening_.ogg" id="3_n5e4g"]
 
 [node name="Main" type="Node2D"]
 position = Vector2(-1, 0)
@@ -9,19 +10,30 @@ script = ExtResource("1_5khhw")
 
 [node name="play" type="Button" parent="."]
 offset_left = 417.0
-offset_top = 106.0
+offset_top = 60.0
 offset_right = 749.0
-offset_bottom = 289.0
-text = "Play"
+offset_bottom = 218.0
+text = "New Game"
 
 [node name="quit" type="Button" parent="."]
-offset_left = 420.0
-offset_top = 349.0
-offset_right = 752.0
-offset_bottom = 532.0
+offset_left = 417.0
+offset_top = 448.0
+offset_right = 749.0
+offset_bottom = 606.0
 text = "Quit"
 
 [node name="ParallaxBackgroundBG" parent="." instance=ExtResource("2_4ixwd")]
 
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_n5e4g")
+
+[node name="continue" type="Button" parent="."]
+offset_left = 418.0
+offset_top = 255.0
+offset_right = 750.0
+offset_bottom = 414.0
+text = "Continue"
+
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="continue" to="." method="_on_continue_pressed"]

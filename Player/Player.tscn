@@ -228,6 +228,7 @@ _data = {
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_uag77"]
 
 [node name="Player" type="CharacterBody2D"]
+floor_snap_length = 7.7
 script = ExtResource("1_ggv0k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

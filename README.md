@@ -1,2 +1,6 @@
 # Godot-Platformer
-Godot Platformer game following a tutorial, using license free assets
+Platformer game made in Godot engine using license free assets
+
+## Preview:
+https://github.com/hkartt/Godot-Platformer/assets/128760459/61fcee8d-7960-4cb2-8ddf-67ead7650fe3
+
